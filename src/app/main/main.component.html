@@ -1,0 +1,21 @@
+<div class="container p-5">
+    <h1 class="text-center mt-5 mb-5">Angular 12 Bootstrap 5 Accordion with Dynamic Data</h1>
+    <div class="accordion" id="accordionExample"><!--ngfor loop started for dynamic data -->
+        <div class="accordion-item" *ngFor="let item of selectedData; let i = index">
+          <h2 class="accordion-header" [id]="'heading'+i">
+         
+            <button class="accordion-button" [ngClass]="{ 'collapsed': i != 0 }" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse'+i" aria-expanded="true" [attr.aria-controls]="'collapse'+i">
+              Accordion Item {{i}}
+            </button>
+          </h2>
+          <div [id]="'collapse'+i" class="accordion-collapse collapse" [ngClass]="{ 'show': i == 0 }" [attr.aria-labelledby]="'heading'+i" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+       
+       
+      </div>
+     
+    </div>
